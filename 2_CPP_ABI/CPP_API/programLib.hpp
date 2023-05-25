@@ -3,5 +3,5 @@
 class PROGRAM_EXPORT Calculator
 {
 public:
-    int Calculate(int a, int b):
+    int Calculate(int a, int b);
 };
