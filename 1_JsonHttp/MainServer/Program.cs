@@ -2,8 +2,9 @@ using MainServer;
 
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
-Cats cats = Cats.Create("cats");
 
+var currDir = Path.Combine(Environment.CurrentDirectory,"cats");
+Cats cats = Cats.Create(currDir);
 
 app.MapGet("/", () => "Hello to Cat world!");
 
@@ -28,3 +29,5 @@ app.MapPost("/cats", async (IFormFile file) =>
 
 
 app.Run();
+
+
