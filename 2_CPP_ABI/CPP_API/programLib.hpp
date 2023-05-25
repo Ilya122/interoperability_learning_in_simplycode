@@ -3,9 +3,5 @@
 class PROGRAM_EXPORT Calculator
 {
 public:
-    int Calculate(int a, int b)
-    {
-        return a + b;
-    }
-
+    int Calculate(int a, int b):
 };
