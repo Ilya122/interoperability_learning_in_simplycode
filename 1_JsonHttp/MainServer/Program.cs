@@ -27,6 +27,10 @@ app.MapPost("/cats", async (IFormFile file) =>
     cats.StoreCat(file);
 });
 
+app.MapGet("/cat_stats", async () =>
+{
+    return cats.GetStats();
+});
 
 app.Run();
 
