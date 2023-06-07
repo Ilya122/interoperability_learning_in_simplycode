@@ -1,0 +1,59 @@
+def RunAI() 
+{
+	var min = get_min_number()
+
+	var max = get_max_number()
+
+	if (current_guess == 0)
+	{
+		current_guess = int(max / 2)
+		return current_guess
+	}
+
+	var gse = greater_or_smaller(current_guess)
+
+	if (gse == 0) {
+		return 999
+
+	} else if (gse == -1) { // Smaller
+		high = current_guess
+
+		var minToUse = min
+
+		if(low != -1) 
+		{
+			minToUse = low
+		}
+
+		var diff = high - low
+
+		var halfDiff = int(diff/2)
+
+		current_guess = current_guess - halfDiff
+
+		return current_guess
+
+	}
+	   else if (gse == 1) { // Bigger
+
+	    low = current_guess
+
+		var maxToUse = max
+
+		if(high != -1) 
+		{
+			maxToUse = high
+		}
+
+		var diff = maxToUse - low
+
+		var halfDiff = int(diff/2)
+
+		current_guess = current_guess + halfDiff
+
+		return current_guess
+		
+	} else {
+	  return current_guess
+	}
+}
